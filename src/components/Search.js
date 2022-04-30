@@ -7,7 +7,6 @@ import { getSearch } from "../features/searchSlice"
 const Search = (props) => {
   const dispatch = useDispatch();
   const search = useSelector(getSearch);
-  console.log(search)
   return (
     <div className="col col-sm-4">
       <label>Szukaj </label>

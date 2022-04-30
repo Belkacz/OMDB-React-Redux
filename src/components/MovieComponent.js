@@ -12,17 +12,19 @@ import { getSearch } from "../features/searchSlice"
 
 export default function MovieComponent() {
   const APIKEY = "5abb4eb6";
-  const [movies, setMovies] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+  // const [movies, setMovies] = useState([]);
+  // const [searchValue, setSearchValue] = useState("");
 
   const dispatch = useDispatch();
   const search = useSelector(getSearch);
   console.log(search)
   const getMoveieRequest = async (search) => {
+    console.log(search)
     const url = `http://www.omdbapi.com/?s=${search}&apikey=${APIKEY}`;
     const respose = await fetch(url);
     const responseJson = await respose.json();
     if (responseJson.Search) {
+      console.log(responseJson.Search)
       dispatch(addMovies(responseJson.Search));
       // setMovies(responseJson.Search);
     }
