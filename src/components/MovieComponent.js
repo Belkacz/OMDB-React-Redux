@@ -18,7 +18,7 @@ export default function MovieComponent() {
   const dispatch = useDispatch();
   const search = useSelector(getSearch);
   console.log(search)
-  const getMoveieRequest = async (search) => {
+  const getMovieRequest = async (search) => {
     console.log(search)
     const url = `http://www.omdbapi.com/?s=${search}&apikey=${APIKEY}`;
     const respose = await fetch(url);
@@ -39,7 +39,7 @@ export default function MovieComponent() {
   };
   const urltest = "http://www.omdbapi.com/?s=star-wars&apikey=5abb4eb6";
 
-  useEffect((search) => {
+  useEffect(() => {
     // const fetchMovies = async () => {
     //   const response = await fetch(url);
     //   const responseJson = await response.json();
@@ -48,7 +48,7 @@ export default function MovieComponent() {
     //   dispatch(addMovies(testdata));
     // };
     // fetchMovies();
-    getMoveieRequest(search)
+    getMovieRequest(search)
   }, [search]);
 
   return (
