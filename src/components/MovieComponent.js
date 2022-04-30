@@ -5,18 +5,26 @@ import Search from "./Search";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch } from "react-redux";
 import { getMovieAsynch } from "../features/getMovieSlice";
-import addMovies from "../features/getMovieSlice";
+import { addMovies } from "../features/getMovieSlice";
+import { useSelector} from "react-redux"
+import { getSearch } from "../features/searchSlice"
+
 
 export default function MovieComponent() {
   const APIKEY = "5abb4eb6";
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const getMoveieRequest = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=star-wars&apikey=${APIKEY}`;
+
+  const dispatch = useDispatch();
+  const search = useSelector(getSearch);
+  console.log(search)
+  const getMoveieRequest = async (search) => {
+    const url = `http://www.omdbapi.com/?s=${search}&apikey=${APIKEY}`;
     const respose = await fetch(url);
     const responseJson = await respose.json();
     if (responseJson.Search) {
-      setMovies(responseJson.Search);
+      dispatch(addMovies(responseJson.Search));
+      // setMovies(responseJson.Search);
     }
   };
   const testdata = {
@@ -27,18 +35,19 @@ export default function MovieComponent() {
     Poster:
       "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
   };
-  const url = "http://www.omdbapi.com/?s=star-wars&apikey=5abb4eb6";
-  const dispatch = useDispatch();
-  useEffect(() => {
-    const fetchMovies = async () => {
-      const response = await fetch(url);
-      const responseJson = await response.json();
-      console.log(responseJson);
-      // dispatch(addMovies(responseJson.Search));
-      dispatch(addMovies(testdata));
-    };
-    fetchMovies();
-  }, []);
+  const urltest = "http://www.omdbapi.com/?s=star-wars&apikey=5abb4eb6";
+
+  useEffect((search) => {
+    // const fetchMovies = async () => {
+    //   const response = await fetch(url);
+    //   const responseJson = await response.json();
+    //   console.log(responseJson);
+    //   // dispatch(addMovies(responseJson.Search));
+    //   dispatch(addMovies(testdata));
+    // };
+    // fetchMovies();
+    getMoveieRequest(search)
+  }, [search]);
 
   return (
     <div className="container-fluid">
@@ -47,10 +56,11 @@ export default function MovieComponent() {
         <br></br>
       </div>
       <div className="row d-flex algin-items-center mt-4 mb-4">
-        <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+        <Search  />
+        {/* searchValue={searchValue} setSearchValue={setSearchValue} */}
       </div>
       <div className="d-flex  mr-5">
-        <MovieList movies={movies} />
+        <MovieList  />
       </div>
     </div>
   );

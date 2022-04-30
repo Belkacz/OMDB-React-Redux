@@ -5,12 +5,9 @@ import { getAllMovies } from '../features/getMovieSlice';
 
 const MovieList = (props) => {
   const movies = useSelector(getAllMovies);
-  console.log(movies);
-
-
   return (
     <>
-      {props.movies.map((movie, index) => (
+      {movies.map((movie, index) => (
         <div key={index} className="">
           {/* <div className="card-body mb-5" ></div> */}
 
