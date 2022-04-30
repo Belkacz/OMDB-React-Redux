@@ -87,11 +87,18 @@ body {
 .overlay{
   position: absolute;
   background: black;
-  width: 100%;
+  /* opacity:1; */
+  /* width: 100%;
   transition: 0.5s ease;
   opacity: 0;
-  bottom: 0;
   font-size: 20px;
-  padding: 20px;
+  padding: 20px; */
   text-align: center;
+  bottom: 15rem;
+  padding: 20px;
+  font-size: 20px;
+  transition: 0.5s ease;
+  opacity: 0;
+  width: 15em;
+  /* text-align: center; */
 }

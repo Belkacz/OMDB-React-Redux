@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import MovieList from "./MovieList";
 import MovieListHeading from "./MovieListHeading";
 import Search from "./Search";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch } from "react-redux";
 import { getMovieAsynch } from "../features/getMovieSlice";
 import { addMovies } from "../features/getMovieSlice";
@@ -61,7 +60,7 @@ export default function MovieComponent() {
         <Search  />
         {/* searchValue={searchValue} setSearchValue={setSearchValue} */}
       </div>
-      <div className="d-flex  mr-5">
+      <div className="d-flex " >
         <MovieList  />
       </div>
     </div>
