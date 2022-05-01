@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import MovieList from "./MovieList";
+import FavList from "./FavouritesList";
 import MovieListHeading from "./MovieListHeading";
 import Search from "./Search";
 import { useDispatch } from "react-redux";
 import { getMovieAsynch } from "../features/getMovieSlice";
 import { addMovies } from "../features/getMovieSlice";
-import { useSelector} from "react-redux"
-import { getSearch } from "../features/searchSlice"
-
+import { useSelector } from "react-redux";
+import { getSearch } from "../features/searchSlice";
 
 export default function MovieComponent() {
   const APIKEY = "5abb4eb6";
@@ -16,14 +16,12 @@ export default function MovieComponent() {
 
   const dispatch = useDispatch();
   const search = useSelector(getSearch);
-  console.log(search)
   const getMovieRequest = async (search) => {
-    console.log(search)
     const url = `http://www.omdbapi.com/?s=${search}&apikey=${APIKEY}`;
     const respose = await fetch(url);
     const responseJson = await respose.json();
     if (responseJson.Search) {
-      console.log(responseJson.Search)
+      // console.log(responseJson.Search);
       dispatch(addMovies(responseJson.Search));
       // setMovies(responseJson.Search);
     }
@@ -47,7 +45,7 @@ export default function MovieComponent() {
     //   dispatch(addMovies(testdata));
     // };
     // fetchMovies();
-    getMovieRequest(search)
+    getMovieRequest(search);
   }, [search]);
 
   return (
@@ -57,11 +55,18 @@ export default function MovieComponent() {
         <br></br>
       </div>
       <div className="row d-flex algin-items-center mt-4 mb-4">
-        <Search  />
+        <Search />
         {/* searchValue={searchValue} setSearchValue={setSearchValue} */}
       </div>
-      <div className="d-flex " >
-        <MovieList  />
+      <div className="d-flex ">
+        <MovieList />
+      </div>
+      <br></br>
+      <div>
+        <h2>Favourites</h2>
+      </div>
+      <div className=" d-flex">
+        <FavList />
       </div>
     </div>
   );

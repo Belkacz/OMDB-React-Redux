@@ -1,40 +1,48 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { getAllMovies } from "../features/getMovieSlice";
+import AddFavourite from "./AddFavourites";
 
-const MovieList = (props) => {
+const MovieList = () => {
   const movies = useSelector(getAllMovies);
   return (
     <>
       {movies.map((movie, index) => (
-        <div key={index} className="m-2 " style={{ width: "30%" }}>
+        <div
+          key={index}
+          className="m-2 image-container"
+          style={{ width: "30%" }}
+        >
           {/* <div className="card-body mb-5" ></div> */}
 
           <p
-            className="mb-2"
-           style={{ width: "20rem", height: "5rem" }}
+            className="mb-1"
+            // style={{ width: "20rem", height: "2rem" }}
           >
             {movie.Title}
           </p>
           <div
-            className=""
+            className="image-container"
             // style={{ width: "20rem" }}
           >
             <img
               src={movie.Poster}
               className=""
-              alt="movie"
+              alt={movie.Title}
               // img-fluid
-              // style={{ width: "100%" }}
+              // style={{ height: "20%" }}
             ></img>
 
             <br></br>
-            <span
+            <AddFavourite
+              movieData={movie}
+            ></AddFavourite>
+            {/* <span
               className="overlay"
               style={{}}
             >
               Favorite {index}.
-            </span>
+            </span> */}
           </div>
         </div>
       ))}

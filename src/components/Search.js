@@ -4,7 +4,7 @@ import {useSelector} from "react-redux"
 import { addSearching } from "../features/searchSlice";
 import { getSearch } from "../features/searchSlice"
 
-const Search = (props) => {
+const Search = () => {
   const dispatch = useDispatch();
   const search = useSelector(getSearch);
   return (
