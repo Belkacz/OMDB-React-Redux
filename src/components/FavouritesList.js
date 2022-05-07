@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { getFav } from "../features/favouritesSlice";
+import RemoveFavourite from "./RemoveFavourites";
 
 const FavList = () => {
   const favs = useSelector(getFav);
@@ -32,6 +33,8 @@ const FavList = () => {
                 // img-fluid
                 // style={{ height: "20%" }}
               ></img>
+              <br></br>
+              <RemoveFavourite movieData={fav}></RemoveFavourite>
               {/* <AddFavourite title={movie.Title} poster ={movie.Poster}></AddFavourite> */}
               {/* <span
               className="overlay"

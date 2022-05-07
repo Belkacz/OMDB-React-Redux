@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addFav } from "../features/favouritesSlice";
+import { rmFav } from "../features/favouritesSlice";
 
 const RemoveFavourite = ({ movieData }) => {
   const dispatch = useDispatch();
@@ -7,7 +7,7 @@ const RemoveFavourite = ({ movieData }) => {
     <>
       <span
         onClick={() => {
-          dispatch(addFav(movieData));
+          dispatch(rmFav(movieData));
         }}
         className="overlay "
         style={{}}
@@ -30,4 +30,4 @@ const RemoveFavourite = ({ movieData }) => {
     </>
   );
 };
-export default AddFavourite;
+export default RemoveFavourite;
