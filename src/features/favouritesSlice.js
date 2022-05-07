@@ -9,7 +9,12 @@ const favSlice = createSlice({
   initialState,
   reducers: {
     addFav: (state, action) => {
-      state.fav =  [... state.fav , action.payload]
+      if(state.fav !== action.payload)
+      state.fav.push(action.payload)
+      // state.fav =  [... state.fav , action.payload]
+    },
+    rmFav: (state, action) => {
+      state.value -= 1;
     },
   },
 });

@@ -32,7 +32,6 @@ export default movieSlice.reducer;
 //   return responseJson;
 //   //   return response.data;
 // });
-// console.log(getMovieAsynch);
 
 // const movieSlice = createSlice({
 //   name: "movies",

@@ -21,7 +21,7 @@ export default function MovieComponent() {
     const respose = await fetch(url);
     const responseJson = await respose.json();
     if (responseJson.Search) {
-      // console.log(responseJson.Search);
+
       dispatch(addMovies(responseJson.Search));
       // setMovies(responseJson.Search);
     }
@@ -40,7 +40,7 @@ export default function MovieComponent() {
     // const fetchMovies = async () => {
     //   const response = await fetch(url);
     //   const responseJson = await response.json();
-    //   console.log(responseJson);
+
     //   // dispatch(addMovies(responseJson.Search));
     //   dispatch(addMovies(testdata));
     // };
