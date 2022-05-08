@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = {
   fav: [],
@@ -9,12 +9,15 @@ const favSlice = createSlice({
   initialState,
   reducers: {
     addFav: (state, action) => {
-      if(state.fav !== action.payload){}
-      state.fav.push(action.payload)
-      // state.fav =  [... state.fav , action.payload]
+      console.log(current(state.fav).includes(action.payload));
+      if (current(state.fav).includes(action.payload) === false) {
+        state.fav.push(action.payload);
+      }
     },
     rmFav: (state, action) => {
-      state.fav = state.fav.filter((fav)=> fav.imdbID !== action.payload.imdbID)
+      state.fav = state.fav.filter(
+        (fav) => fav.imdbID !== action.payload.imdbID
+      );
     },
   },
 });

@@ -35,13 +35,6 @@ const FavList = () => {
               ></img>
               <br></br>
               <RemoveFavourite movieData={fav}></RemoveFavourite>
-              {/* <AddFavourite title={movie.Title} poster ={movie.Poster}></AddFavourite> */}
-              {/* <span
-              className="overlay"
-              style={{}}
-            >
-              Favorite {index}.
-            </span> */}
             </div>
           </div>
         ))}
