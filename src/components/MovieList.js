@@ -1,10 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { getAllMovies } from "../features/getMovieSlice";
+import { getFav } from "../features/favouritesSlice";
 import AddFavourite from "./AddFavourites";
+import RemoveFavourite from "./RemoveFavourites";
 
 const MovieList = () => {
   const movies = useSelector(getAllMovies);
+  const favs = useSelector(getFav);
   return (
     <>
       {movies.map((movie, index) => (
@@ -34,15 +37,13 @@ const MovieList = () => {
             ></img>
 
             <br></br>
-            <AddFavourite
-              movieData={movie}
-            ></AddFavourite>
-            {/* <span
-              className="overlay"
-              style={{}}
-            >
-              Favorite {index}.
-            </span> */}
+
+            <div hidden={favs.includes(movie) ? true : false}>
+              <AddFavourite movieData={movie}></AddFavourite>
+            </div>
+            <div hidden={favs.includes(movie) ? false : true}>
+              <RemoveFavourite movieData={movie}></RemoveFavourite>
+            </div>
           </div>
         </div>
       ))}

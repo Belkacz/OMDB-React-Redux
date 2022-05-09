@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { addMovies } from "../features/getMovieSlice";
+import { getSearch } from "../features/searchSlice";
 import MovieList from "./MovieList";
 import FavList from "./FavouritesList";
 import MovieListHeading from "./MovieListHeading";
 import Search from "./Search";
-import { useDispatch } from "react-redux";
-import { getMovieAsynch } from "../features/getMovieSlice";
-import { addMovies } from "../features/getMovieSlice";
-import { useSelector } from "react-redux";
-import { getSearch } from "../features/searchSlice";
+
+
 
 export default function MovieComponent() {
   const APIKEY = "5abb4eb6";
@@ -68,6 +70,7 @@ export default function MovieComponent() {
       <div className=" d-flex">
         <FavList />
       </div>
+    
     </div>
   );
 }

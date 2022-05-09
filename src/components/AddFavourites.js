@@ -1,7 +1,9 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addFav } from "../features/favouritesSlice";
+import { getFav } from "../features/favouritesSlice";
 
-const AddFavourite = ({movieData}) => {
+
+const AddFavourite = ({ movieData }) => {
   const dispatch = useDispatch();
   return (
     <>

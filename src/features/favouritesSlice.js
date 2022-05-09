@@ -9,7 +9,6 @@ const favSlice = createSlice({
   initialState,
   reducers: {
     addFav: (state, action) => {
-      console.log(current(state.fav).includes(action.payload));
       if (current(state.fav).includes(action.payload) === false) {
         state.fav.push(action.payload);
       }
