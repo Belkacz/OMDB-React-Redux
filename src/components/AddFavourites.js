@@ -11,7 +11,7 @@ const AddFavourite = ({ movieData }) => {
         onClick={() => {
           dispatch(addFav(movieData));
         }}
-        className="overlay "
+        className="overlay"
         style={{}}
       >
         Favorite

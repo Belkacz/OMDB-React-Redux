@@ -7,7 +7,7 @@ const FavList = () => {
   const favs = useSelector(getFav);
   return (
     <>
-      <div>
+      <div className="container-fluid d-flex">
         {favs.map((fav, index) => (
           <div
             key={index}

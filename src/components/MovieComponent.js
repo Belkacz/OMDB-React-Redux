@@ -56,11 +56,7 @@ export default function MovieComponent() {
         <MovieListHeading heading="Movies" />
         <br></br>
       </div>
-      <div className="row d-flex algin-items-center mt-4 mb-4">
-        <Search />
-        {/* searchValue={searchValue} setSearchValue={setSearchValue} */}
-      </div>
-      <div className="d-flex ">
+      <div className=" ">
         <MovieList />
       </div>
       <br></br>

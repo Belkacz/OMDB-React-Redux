@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { getAllMovies } from "../features/getMovieSlice";
 import { getFav } from "../features/favouritesSlice";
+import Search from "./Search";
 import AddFavourite from "./AddFavourites";
 import RemoveFavourite from "./RemoveFavourites";
 
@@ -10,6 +11,13 @@ const MovieList = () => {
   const favs = useSelector(getFav);
   return (
     <>
+    
+      <div className="row d-flex algin-items-center mt-4 mb-4">
+        <Search />
+        {/* searchValue={searchValue} setSearchValue={setSearchValue} */}
+      </div>
+      <br></br>
+      <div className="container-fluid d-flex">
       {movies.map((movie, index) => (
         <div
           key={index}
@@ -47,6 +55,7 @@ const MovieList = () => {
           </div>
         </div>
       ))}
+      </div>
     </>
   );
 };

@@ -42,10 +42,7 @@ body {
   background-color: rgb(8, 8, 68);
   color: aliceblue;
 }
-.row{
-  overflow-x: auto;
-  flex-wrap: nowrap;
-}
+
 
 /* .row {
   display: flex;
@@ -72,6 +69,13 @@ body {
  
 } */
 
+
+.row {
+	overflow-x: auto;
+	flex-wrap: nowrap;
+}
+
+
 .image-conteiner{
   position: relative;
   transition: transform 0.2s;
@@ -85,20 +89,22 @@ body {
 }
 
 .overlay{
-  position: absolute;
+  position: relative;
   background: black;
+  margin: 20%;
+
   /* opacity:1; */
-  /* width: 100%;
+  /* ;
   transition: 0.5s ease;
   opacity: 0;
   font-size: 20px;
   padding: 20px; */
   text-align: center;
-  bottom: 15rem;
-  padding: 20px;
+  bottom: 7rem;
+  padding: 25px;
   font-size: 20px;
   transition: 0.5s ease;
   opacity: 0;
-  width: 15em;
+  width: 200%;
   /* text-align: center; */
 }
