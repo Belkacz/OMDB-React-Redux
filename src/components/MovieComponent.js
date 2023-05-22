@@ -36,7 +36,7 @@ export default function MovieComponent() {
     Poster:
       "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
   };
-  const urltest = "http://www.omdbapi.com/?s=star-wars&apikey=5abb4eb6";
+  const urltest = "https://www.omdbapi.com/?s=star-wars&apikey=5abb4eb6";
 
   useEffect(() => {
     // const fetchMovies = async () => {
