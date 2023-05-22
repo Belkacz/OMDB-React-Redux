@@ -19,7 +19,7 @@ export default function MovieComponent() {
   const dispatch = useDispatch();
   const search = useSelector(getSearch);
   const getMovieRequest = async (search) => {
-    const url = `http://www.omdbapi.com/?s=${search}&apikey=${APIKEY}`;
+    const url = `https://www.omdbapi.com/?s=${search}&apikey=${APIKEY}`;
     const respose = await fetch(url);
     const responseJson = await respose.json();
     if (responseJson.Search) {
