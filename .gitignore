@@ -1,0 +1,9 @@
+# Ignoruj katalogi wygenerowane przez Node.js
+node_modules/
+build/
+dist/
+
+# Ignoruj pliki, które nie są potrzebne w repozytorium
+.env
+.cache
+.DS_Store
