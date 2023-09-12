@@ -1,3 +1,4 @@
+Project is still under develop, needs visual refinement, but core mechanic to show data using React & Redux work fine
 # [Peview](https://omdb-react-redux.vercel.app/)
 
 ```
